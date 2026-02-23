@@ -1,14 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
 
 @import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
 
-@theme{
-    --color-primary: #2563EB;
+@theme {
+    /* ── Brand ── */
+    --color-primary:   #2563EB;
     --color-secondary: #FBBF24;
+    --color-accent:    #F97316;
+
+    /* ── Light mode surface tokens ── */
+    --color-bg:        #ffffff;
+    --color-bg-muted:  #f8fafc;
+    --color-bg-card:   #ffffff;
+    --color-border:    #e2e8f0;
+    --color-text:      #1e293b;
+    --color-text-muted:#64748b;
 }
-*{
+
+/* ── Dark mode overrides (applied when <html class="dark">) ── */
+:root.dark {
+    --color-bg:        #0f172a;
+    --color-bg-muted:  #1e293b;
+    --color-bg-card:   #1e293b;
+    --color-border:    #334155;
+    --color-text:      #f1f5f9;
+    --color-text-muted:#94a3b8;
+}
+
+/* ── Global dark mode background & text ── */
+html.dark body {
+    background-color: #0f172a;
+    color: #f1f5f9;
+}
+
+* {
     font-family: Outfit, serif;
 }
-.font-playfair{
+.font-playfair {
     font-family: Playfair, sans-serif;
 }
